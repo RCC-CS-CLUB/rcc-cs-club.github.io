@@ -484,6 +484,227 @@ a:focus-visible {
     margin-bottom: 0;
 }
 
+/* Team section */
+
+.team-section {
+    background-color: #101a22;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 16px 0 24px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    padding: 32px;
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+}
+
+.team-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    background-color: #203b41;
+    color: #7de5aa;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.team-card h3 {
+    color: #7de5aa;
+    font-size: 1.5rem;
+    margin: 8px 0 0;
+}
+
+.team-role {
+    color: #bed0dc;
+    margin: 0;
+}
+
+.team-invitation {
+    max-width: 650px;
+    margin: 48px auto 0;
+}
+
+.team-invitation h3 {
+    color: #7de5aa;
+    margin-bottom: 16px;
+}
+
+.team-invitation p {
+    line-height: 1.7;
+}
+
+/* Soapy mascot */
+
+.soapy {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+
+    width: 88px;
+    height: 88px;
+    border: 1px solid rgba(125, 229, 170, 0.45);
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 30% 30%,
+            rgba(255, 255, 255, 0.55),
+            rgba(255, 255, 255, 0.08) 22%,
+            rgba(125, 229, 170, 0.12) 45%,
+            rgba(155, 138, 245, 0.18) 70%,
+            rgba(255, 255, 255, 0.04) 100%);
+
+    box-shadow:
+        0 0 24px rgba(125, 229, 170, 0.18),
+        inset 0 0 16px rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    overflow: hidden;
+
+    animation: soapy-float 4s ease-in-out infinite,
+        soapy-glow 3.5s ease-in-out infinite;
+}
+
+/* actual bubble highlight */
+
+.soapy::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 24%;
+    width: 16px;
+    height: 16px;
+
+    background: radial-gradient(circle at 35% 35%,
+            rgba(100, 230, 255, 0.85),
+            rgba(100, 230, 255, 0.25) 45%,
+            transparent 75%);
+
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.soapy-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.soapy-eyes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.soapy-eye {
+    width: 8px;
+    height: 8px;
+    background-color: #e9fffb;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(233, 255, 251, 0.45);
+    animation: soapy-blink 6s infinite;
+}
+
+.soapy-mouth {
+    width: 20px;
+    height: 10px;
+    border-bottom: 3px solid rgba(233, 255, 251, 0.95);
+    border-radius: 0 0 20px 20px;
+    opacity: 0.95;
+}
+
+.soapy:hover {
+    transform: scale(1.05);
+}
+
+.soapy:focus-visible {
+    box-shadow:
+        0 0 0 3px rgba(125, 229, 170, 0.35),
+        0 0 24px rgba(125, 229, 170, 0.18),
+        inset 0 0 16px rgba(255, 255, 255, 0.08);
+}
+
+@keyframes soapy-float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes soapy-glow {
+    0% {
+        box-shadow:
+            0 0 20px rgba(125, 229, 170, 0.14),
+            inset 0 0 16px rgba(255, 255, 255, 0.08);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px rgba(125, 229, 170, 0.24),
+            inset 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow:
+            0 0 20px rgba(125, 229, 170, 0.14),
+            inset 0 0 16px rgba(255, 255, 255, 0.08);
+    }
+}
+
+@keyframes soapy-blink {
+
+    0%,
+    46%,
+    48%,
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    47% {
+        transform: scaleY(0.15);
+        opacity: 0.8;
+    }
+}
+
 /* Smaller screens need stronger text contrast */
 
 @media (max-width: 600px) {
@@ -539,6 +760,27 @@ a:focus-visible {
         flex: 1;
         min-width: 0;
     }
+
+    .soapy {
+        width: 72px;
+        height: 72px;
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .soapy-eyes {
+        gap: 10px;
+    }
+
+    .soapy-eye {
+        width: 7px;
+        height: 7px;
+    }
+
+    .soapy-mouth {
+        width: 16px;
+        height: 8px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -582,6 +824,20 @@ a:focus-visible {
 
     .project-card {
         padding: 28px;
+    }
+
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card {
+        padding: 28px;
+    }
+
+    .team-avatar {
+        width: 80px;
+        height: 80px;
     }
 
 }
