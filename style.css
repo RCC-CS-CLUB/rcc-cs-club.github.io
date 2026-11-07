@@ -127,10 +127,9 @@ a:focus-visible {
 
 .page-section {
     max-width: 1100px;
-    min-height: 50vh;
     margin: 0 auto;
     padding: 80px 24px;
-    scroll-margin-top: 160px;
+    scroll-margin-top: 60px;
 }
 
 .page-section h2 {
@@ -177,6 +176,7 @@ a:focus-visible {
 
 .hackathon-info p {
     margin: 8px 0;
+    font-size: 1.6rem;
     color: var(--text-secondary);
 }
 
@@ -189,7 +189,7 @@ a:focus-visible {
 
 .countdown {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 16px;
 }
 
@@ -202,7 +202,7 @@ a:focus-visible {
 
 .countdown-unit span {
     color: var(--accent-green);
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -247,9 +247,180 @@ a:focus-visible {
     background-color: rgba(21, 36, 43, 0.88);
 }
 
+/* Scroll invitation */
+
+.scroll-cue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    gap: 12px;
+
+    margin-top: 32px;
+
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.scroll-arrow {
+    color: var(--accent-green);
+    font-size: 2.5rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.scroll-cue:hover .scroll-arrow {
+    transform: translateY(5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-arrow {
+        transition: none;
+    }
+}
+
+/* About section */
+
+.about-section {
+    background-color: #0b1018;
+    text-align: center;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 40px;
+}
+
+.about-section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 16px 0 24px;
+}
+
+.section-intro {
+    max-width: 700px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.about-card {
+    padding: 32px;
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+    text-align: left;
+}
+
+.about-card h3 {
+    color: #7de5aa;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.about-card p {
+    line-height: 1.6;
+}
+
+/* Events section */
+
+.events-section {
+    background-color: #101a22;
+}
+
+.events-section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 16px 0 24px;
+}
+
+.events-section .section-container {
+    text-align: center;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+
+.event-card {
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.featured-event {
+    grid-column: 1 / -1;
+}
+
+.featured-event .event-visual {
+    height: 340px;
+}
+
+.featured-event .event-image {
+    object-position: center 70%;
+}
+
+.event-visual {
+    min-height: 180px;
+    height: 260px;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #173d41, #172332);
+    color: #7de5aa;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.event-content {
+    padding: 32px;
+}
+
+.event-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-content h3 {
+    color: #7de5aa;
+    font-size: 1.5rem;
+    margin: 0 0 16px;
+}
+
+.event-content p {
+    line-height: 1.6;
+}
+
+.event-label {
+    color: #7de5aa;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+
 /* Smaller screens need stronger text contrast */
 
 @media (max-width: 600px) {
+
+    .page-section {
+        scroll-margin-top: 140px;
+    }
+
     .hero-section {
         background-image:
             linear-gradient(180deg,
@@ -258,5 +429,79 @@ a:focus-visible {
             url("./assets/images/bubble-hero.webp");
 
         background-position: 68% center;
+    }
+
+    .hero {
+        min-height: auto;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        padding: 48px 24px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+    }
+
+    .hackathon-banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .button-primary {
+        align-self: center;
+    }
+
+    .scroll-cue {
+        align-self: center;
+    }
+
+    .countdown {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .countdown-unit {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .section-container {
+        padding: 72px 24px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        text-align: center;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .featured-event .event-visual {
+        height: 220px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-content {
+        padding: 24px;
+    }
+
+    .event-visual {
+        min-height: 140px;
+        height: 200px;
+        padding: 0;
+        text-align: center;
     }
 }
