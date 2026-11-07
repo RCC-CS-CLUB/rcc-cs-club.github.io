@@ -23,9 +23,9 @@ body {
 /* Main welcome section */
 .hero {
     min-height: 100vh;
-    max-width: 1100px;
+    max-width: 1650px;
     margin: 0 auto;
-    padding: 60px 24px;
+    padding: 60px 40px;
 
     display: flex;
     flex-direction: column;
@@ -64,9 +64,9 @@ h1 {
 }
 
 .navigation {
-    max-width: 1100px;
+    max-width: 1650px;
     margin: 0 auto;
-    padding: 20px 24px;
+    padding: 20px 40px;
 
     display: flex;
     justify-content: space-between;
@@ -151,6 +151,10 @@ a:focus-visible {
 /* Hackathon featured banner */
 
 .hackathon-banner {
+    width: 100%;
+    max-width: 1100px;
+    align-self: center;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -206,4 +210,46 @@ a:focus-visible {
     font-size: 0.7rem;
     text-transform: uppercase;
 
+}
+
+/* Hero artwork and atmosphere */
+
+.hero-section {
+    background-image:
+        linear-gradient(90deg,
+            rgba(11, 16, 24, 0.97) 0%,
+            rgba(11, 16, 24, 0.78) 32%,
+            rgba(11, 16, 24, 0.15) 70%),
+        url("./assets/images/bubble-hero.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Keep the headline readable */
+
+.hero h1 {
+    max-width: 650px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Let the artwork show through the event panel */
+
+.hackathon-banner {
+    background-color: rgba(21, 36, 43, 0.88);
+}
+
+/* Smaller screens need stronger text contrast */
+
+@media (max-width: 600px) {
+    .hero-section {
+        background-image:
+            linear-gradient(180deg,
+                rgba(11, 16, 24, 0.78),
+                rgba(11, 16, 24, 0.94)),
+            url("./assets/images/bubble-hero.webp");
+
+        background-position: 68% center;
+    }
 }
