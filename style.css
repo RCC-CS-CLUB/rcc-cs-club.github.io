@@ -413,6 +413,77 @@ a:focus-visible {
     margin-bottom: 12px;
 }
 
+/* Projects section */
+
+.projects-section {
+    background-color: #0b1018;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 16px 0 24px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 32px;
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+}
+
+.project-card-header {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 12px;
+}
+
+.project-status {
+    color: #7de5aa;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.project-card h3 {
+    color: #7de5aa;
+    font-size: 1.7rem;
+}
+
+.project-card>p:not(.project-status):not(.project-tech) {
+    line-height: 1.7;
+}
+
+.project-tech {
+    margin-top: 12px;
+    color: #a7bac6;
+    font-size: 0.9rem;
+}
+
+.project-icon {
+    width: 32px;
+    height: 32px;
+    color: #7de5aa;
+    flex-shrink: 0;
+}
+
+.project-card h3,
+.project-card p {
+    margin-bottom: 0;
+}
+
 /* Smaller screens need stronger text contrast */
 
 @media (max-width: 600px) {
@@ -504,4 +575,13 @@ a:focus-visible {
         padding: 0;
         text-align: center;
     }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 28px;
+    }
+
 }
