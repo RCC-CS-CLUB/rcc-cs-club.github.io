@@ -101,14 +101,15 @@ h1 {
 .button-primary {
     display: inline-block;
     align-self: flex-start;
-    padding: 14px 28px;
-    margin: 24px 0;
+    padding: 18px 36px;
+    margin: 24px 60px;
 
     background-color: var(--accent-green);
     color: var(--bg-primary);
     font-weight: bold;
+    font-size: 1.4rem;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
 .button-primary:hover {
@@ -232,6 +233,12 @@ a:focus-visible {
 .hero h1 {
     max-width: 650px;
     text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero headline accent */
+
+.hero h1 .highlight {
+    color: var(--accent-green);
 }
 
 /* Let the artwork show through the event panel */
