@@ -126,9 +126,6 @@ a:focus-visible {
 /* Temporary section layout */
 
 .page-section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 80px 24px;
     scroll-margin-top: 60px;
 }
 
@@ -563,6 +560,86 @@ a:focus-visible {
     margin: 40px 0 20px;
 }
 
+/* Connect section */
+
+.connect-section {
+    background-color: #0b1018;
+    text-align: center;
+}
+
+.connect-section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 16px 0 24px;
+}
+
+.connect-invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding: 48px 32px;
+    margin-bottom: 32px;
+
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+}
+
+.connect-invitation h3 {
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+.connect-invitation p {
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.connect-invitation .button-primary {
+    align-self: center;
+}
+
+.connect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.connect-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 32px;
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.connect-card h3 {
+    color: #7de5aa;
+    font-size: 1.3rem;
+}
+
+.connect-card p {
+    color: #bed0dc;
+    line-height: 1.6;
+}
+
+a.connect-card:hover {
+    border-color: #7de5aa;
+}
+
+a:focus-visible {
+    outline: 2px solid #7de5aa;
+    outline-offset: 4px;
+}
+
 /* Soapy mascot */
 
 .soapy {
@@ -768,26 +845,6 @@ a:focus-visible {
         min-width: 0;
     }
 
-    .soapy {
-        width: 72px;
-        height: 72px;
-        right: 16px;
-        bottom: 16px;
-    }
-
-    .soapy-eyes {
-        gap: 10px;
-    }
-
-    .soapy-eye {
-        width: 7px;
-        height: 7px;
-    }
-
-    .soapy-mouth {
-        width: 16px;
-        height: 8px;
-    }
 }
 
 @media (max-width: 700px) {
@@ -833,7 +890,6 @@ a:focus-visible {
         padding: 28px;
     }
 
-
     .team-grid {
         grid-template-columns: 1fr;
     }
@@ -845,6 +901,53 @@ a:focus-visible {
     .team-avatar {
         width: 80px;
         height: 80px;
+    }
+
+    .connect-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .connect-invitation {
+        padding: 32px 24px;
+    }
+
+    .connect-card {
+        padding: 24px;
+    }
+
+    .soapy {
+        width: 56px;
+        height: 56px;
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .soapy-face {
+        gap: 5px;
+    }
+
+    .soapy-eyes {
+        gap: 9px;
+    }
+
+    .soapy-eye {
+        width: 6px;
+        height: 6px;
+    }
+
+    .soapy-mouth {
+        width: 14px;
+        height: 7px;
+        border-bottom-width: 2px;
+    }
+
+    .soapy::before {
+        width: 12px;
+        height: 12px;
+    }
+
+    .connect-section {
+        padding-bottom: 80px;
     }
 
 }
