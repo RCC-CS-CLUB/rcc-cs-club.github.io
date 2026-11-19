@@ -1,0 +1,953 @@
+/* RCC CS Club — Visual Foundation */
+
+:root {
+    --bg-primary: #0B1018;
+    --text-primary: #FFFFFF;
+    --text-secondary: #BED0DC;
+    --accent-green: #7DE5AA;
+}
+
+/* Apply consistent sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Overall page appearance */
+body {
+    margin: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: system-ui, sans-serif;
+}
+
+/* Main welcome section */
+.hero {
+    min-height: 100vh;
+    max-width: 1650px;
+    margin: 0 auto;
+    padding: 60px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Small introductory label */
+.eyebrow {
+    color: var(--accent-green);
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+
+/* Main headline */
+h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.1;
+    margin: 16px 0;
+}
+
+/* Supporting headline */
+.tagline {
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+}
+
+/* Sticky navigation */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid #29404B;
+}
+
+.navigation {
+    max-width: 1650px;
+    margin: 0 auto;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    color: var(--accent-green);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--accent-green);
+}
+
+/* Main call-to-action */
+
+.button-primary {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 18px 36px;
+    margin: 24px 60px;
+
+    background-color: var(--accent-green);
+    color: var(--bg-primary);
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.button-primary:hover {
+    background-color: #75E7B1;
+}
+
+/* Keyboard accessibility */
+
+a:focus-visible {
+    outline: 3px solid #46C2FF;
+    outline-offset: 4px;
+}
+
+/* Temporary section layout */
+
+.page-section {
+    scroll-margin-top: 60px;
+}
+
+.page-section h2 {
+    color: var(--accent-green);
+}
+
+/* Small-screen navigation */
+
+@media (max-width: 600px) {
+    .navigation {
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+}
+
+/* Hackathon featured banner */
+
+.hackathon-banner {
+    width: 100%;
+    max-width: 1100px;
+    align-self: center;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    margin-top: 28px;
+    padding: 24px;
+
+    background-color: #15242B;
+    border: 1px solid #29404B;
+    border-radius: 12px;
+}
+
+.hackathon-info h2 {
+    margin: 8px 0;
+    font-size: 1.4rem;
+}
+
+.hackathon-info p {
+    margin: 8px 0;
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+}
+
+.hackathon-info .event-label {
+    color: var(--accent-green);
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+}
+
+.countdown {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+}
+
+.countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 48px;
+}
+
+.countdown-unit span {
+    color: var(--accent-green);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.countdown-unit small {
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+
+}
+
+/* Hero artwork and atmosphere */
+
+.hero-section {
+    background-image:
+        linear-gradient(90deg,
+            rgba(11, 16, 24, 0.97) 0%,
+            rgba(11, 16, 24, 0.78) 32%,
+            rgba(11, 16, 24, 0.15) 70%),
+        url("./assets/images/bubble-hero.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Keep the headline readable */
+
+.hero h1 {
+    max-width: 650px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero headline accent */
+
+.hero h1 .highlight {
+    color: var(--accent-green);
+}
+
+/* Let the artwork show through the event panel */
+
+.hackathon-banner {
+    background-color: rgba(21, 36, 43, 0.88);
+}
+
+/* Scroll invitation */
+
+.scroll-cue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    gap: 12px;
+
+    margin-top: 32px;
+
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.scroll-arrow {
+    color: var(--accent-green);
+    font-size: 2.5rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.scroll-cue:hover .scroll-arrow {
+    transform: translateY(5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-arrow {
+        transition: none;
+    }
+}
+
+/* About section */
+
+.about-section {
+    background-color: #0b1018;
+    text-align: center;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 40px;
+}
+
+.about-section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 16px 0 24px;
+}
+
+.section-intro {
+    max-width: 700px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.about-card {
+    padding: 32px;
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+    text-align: left;
+}
+
+.about-card h3 {
+    color: #7de5aa;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.about-card p {
+    line-height: 1.6;
+}
+
+/* Events section */
+
+.events-section {
+    background-color: #101a22;
+}
+
+.events-section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 16px 0 24px;
+}
+
+.events-section .section-container {
+    text-align: center;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+
+.event-card {
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.featured-event {
+    grid-column: 1 / -1;
+}
+
+.featured-event .event-visual {
+    height: 340px;
+}
+
+.featured-event .event-image {
+    object-position: center 70%;
+}
+
+.event-visual {
+    min-height: 180px;
+    height: 260px;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #173d41, #172332);
+    color: #7de5aa;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.event-content {
+    padding: 32px;
+}
+
+.event-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-content h3 {
+    color: #7de5aa;
+    font-size: 1.5rem;
+    margin: 0 0 16px;
+}
+
+.event-content p {
+    line-height: 1.6;
+}
+
+.event-label {
+    color: #7de5aa;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+
+/* Projects section */
+
+.projects-section {
+    background-color: #0b1018;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 16px 0 24px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 32px;
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+}
+
+.project-card-header {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 12px;
+}
+
+.project-status {
+    color: #7de5aa;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.project-card h3 {
+    color: #7de5aa;
+    font-size: 1.7rem;
+}
+
+.project-card>p:not(.project-status):not(.project-tech) {
+    line-height: 1.7;
+}
+
+.project-tech {
+    margin-top: 12px;
+    color: #a7bac6;
+    font-size: 0.9rem;
+}
+
+.project-icon {
+    width: 32px;
+    height: 32px;
+    color: #7de5aa;
+    flex-shrink: 0;
+}
+
+.project-card h3,
+.project-card p {
+    margin-bottom: 0;
+}
+
+/* Team section */
+
+.team-section {
+    background-color: #101a22;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 16px 0 24px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    padding: 32px;
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+}
+
+.team-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    background-color: #203b41;
+    color: #7de5aa;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.team-card h3 {
+    color: #7de5aa;
+    font-size: 1.5rem;
+    margin: 8px 0 0;
+}
+
+.team-role {
+    color: #bed0dc;
+    margin: 0;
+}
+
+.team-invitation {
+    max-width: 650px;
+    margin: 48px auto 0;
+}
+
+.team-invitation h3 {
+    color: #7de5aa;
+    margin-bottom: 16px;
+}
+
+.team-invitation p {
+    line-height: 1.7;
+}
+
+.team-group-title {
+    color: #bed0dc;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 40px 0 20px;
+}
+
+/* Connect section */
+
+.connect-section {
+    background-color: #0b1018;
+    text-align: center;
+}
+
+.connect-section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 16px 0 24px;
+}
+
+.connect-invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding: 48px 32px;
+    margin-bottom: 32px;
+
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+}
+
+.connect-invitation h3 {
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+.connect-invitation p {
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.connect-invitation .button-primary {
+    align-self: center;
+}
+
+.connect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.connect-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 32px;
+    background-color: #15242b;
+    border: 1px solid #29404b;
+    border-radius: 16px;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.connect-card h3 {
+    color: #7de5aa;
+    font-size: 1.3rem;
+}
+
+.connect-card p {
+    color: #bed0dc;
+    line-height: 1.6;
+}
+
+a.connect-card:hover {
+    border-color: #7de5aa;
+}
+
+a:focus-visible {
+    outline: 2px solid #7de5aa;
+    outline-offset: 4px;
+}
+
+/* Soapy mascot */
+
+.soapy {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+
+    width: 88px;
+    height: 88px;
+    border: 1px solid rgba(125, 229, 170, 0.45);
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 30% 30%,
+            rgba(255, 255, 255, 0.55),
+            rgba(255, 255, 255, 0.08) 22%,
+            rgba(125, 229, 170, 0.12) 45%,
+            rgba(155, 138, 245, 0.18) 70%,
+            rgba(255, 255, 255, 0.04) 100%);
+
+    box-shadow:
+        0 0 24px rgba(125, 229, 170, 0.18),
+        inset 0 0 16px rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    overflow: hidden;
+
+    animation: soapy-float 4s ease-in-out infinite,
+        soapy-glow 3.5s ease-in-out infinite;
+}
+
+/* actual bubble highlight */
+
+.soapy::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 24%;
+    width: 16px;
+    height: 16px;
+
+    background: radial-gradient(circle at 35% 35%,
+            rgba(100, 230, 255, 0.85),
+            rgba(100, 230, 255, 0.25) 45%,
+            transparent 75%);
+
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.soapy-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.soapy-eyes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.soapy-eye {
+    width: 8px;
+    height: 8px;
+    background-color: #e9fffb;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(233, 255, 251, 0.45);
+    animation: soapy-blink 6s infinite;
+}
+
+.soapy-mouth {
+    width: 20px;
+    height: 10px;
+    border-bottom: 3px solid rgba(233, 255, 251, 0.95);
+    border-radius: 0 0 20px 20px;
+    opacity: 0.95;
+}
+
+.soapy:hover {
+    transform: scale(1.05);
+}
+
+.soapy:focus-visible {
+    box-shadow:
+        0 0 0 3px rgba(125, 229, 170, 0.35),
+        0 0 24px rgba(125, 229, 170, 0.18),
+        inset 0 0 16px rgba(255, 255, 255, 0.08);
+}
+
+@keyframes soapy-float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes soapy-glow {
+    0% {
+        box-shadow:
+            0 0 20px rgba(125, 229, 170, 0.14),
+            inset 0 0 16px rgba(255, 255, 255, 0.08);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px rgba(125, 229, 170, 0.24),
+            inset 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow:
+            0 0 20px rgba(125, 229, 170, 0.14),
+            inset 0 0 16px rgba(255, 255, 255, 0.08);
+    }
+}
+
+@keyframes soapy-blink {
+
+    0%,
+    46%,
+    48%,
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    47% {
+        transform: scaleY(0.15);
+        opacity: 0.8;
+    }
+}
+
+/* Smaller screens need stronger text contrast */
+
+@media (max-width: 600px) {
+
+    .page-section {
+        scroll-margin-top: 140px;
+    }
+
+    .hero-section {
+        background-image:
+            linear-gradient(180deg,
+                rgba(11, 16, 24, 0.78),
+                rgba(11, 16, 24, 0.94)),
+            url("./assets/images/bubble-hero.webp");
+
+        background-position: 68% center;
+    }
+
+    .hero {
+        min-height: auto;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        padding: 48px 24px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+    }
+
+    .hackathon-banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .button-primary {
+        align-self: center;
+    }
+
+    .scroll-cue {
+        align-self: center;
+    }
+
+    .countdown {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .countdown-unit {
+        flex: 1;
+        min-width: 0;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .section-container {
+        padding: 72px 24px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        text-align: center;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .featured-event .event-visual {
+        height: 220px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-content {
+        padding: 24px;
+    }
+
+    .event-visual {
+        min-height: 140px;
+        height: 200px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 28px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card {
+        padding: 28px;
+    }
+
+    .team-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .connect-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .connect-invitation {
+        padding: 32px 24px;
+    }
+
+    .connect-card {
+        padding: 24px;
+    }
+
+    .soapy {
+        width: 56px;
+        height: 56px;
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .soapy-face {
+        gap: 5px;
+    }
+
+    .soapy-eyes {
+        gap: 9px;
+    }
+
+    .soapy-eye {
+        width: 6px;
+        height: 6px;
+    }
+
+    .soapy-mouth {
+        width: 14px;
+        height: 7px;
+        border-bottom-width: 2px;
+    }
+
+    .soapy::before {
+        width: 12px;
+        height: 12px;
+    }
+
+    .connect-section {
+        padding-bottom: 80px;
+    }
+
+}
